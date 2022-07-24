@@ -28,6 +28,6 @@ def grader(name,score):
 # main
 import random
 
-for score in [random.randint(40,100) for _ in range(10)]:
+for score in [random.randint(40,100) for _ in range(5)]:
     grader("이호창",score)
     print()

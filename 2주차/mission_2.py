@@ -17,7 +17,16 @@ def yearly_payment(payment):
     else:
         tax_rate = 0.42
 
-    print(f"세전 연봉:{payment}만원\n세후 연봉:{int(payment - payment * tax_rate)}만원")
+    # 억, 만 구분
+    def split_money(money):
+        money = str(money)
+        if len(money) > 4:
+            return money[:-4] + '억' + str(int(money[-4:])) + "만"
+        else:
+            return money + "만"
+
+    print(f"세전 연봉:{split_money(payment)}원\n세후 연봉:{split_money(int(payment - payment * tax_rate))}원")
+
 
 # 입력
 monthly_payment = int(input("월급을 입력하세요 : "))
